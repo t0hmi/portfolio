@@ -1,0 +1,172 @@
+@import '../../../scss/variables';
+
+.professional_experience {
+    margin-top: 180px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 100px 0 0;
+    height: 100%;
+    position: relative;
+    height: fit-content;
+
+    @media screen and (max-width : 500px) {
+    padding: 0 5px 0 0;
+        
+    }
+
+
+    .deco {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        z-index: -1;
+    }
+    
+    &__left {
+        width: 30%;
+        position: relative;
+        background: linear-gradient(172.94deg, #1DB954 -23.64%, #6FD392 99.99%);
+
+        @media screen and (max-width: 785px) {
+            width:  20%;
+        }
+
+        @media screen and (max-width: 500px) {
+            width:  5%;
+        }
+
+        img {
+            width: 400px;
+            position: absolute;
+
+            @media screen and (max-width: 785px) {
+                display: none;
+            }
+
+            @media screen and (max-width: 1200px) {
+                width:  300px;
+            }
+        }
+
+        .bg {
+            top: 108px;
+            left: -50px;
+        }
+
+        .front {
+            top: 250px;
+            left: 190px;
+            @media screen and (max-width: 1200px) {
+                top: 215px;
+                left: 130px;
+            }
+        }
+
+        .move {
+            left: 70px;
+            top: 40px;
+
+            @media screen and (max-width: 1200px) {
+                top: 55px;
+                left: 40px;
+            }
+        }
+
+    }
+    
+    &__right {
+        height: fit-content;
+        width: 60%;
+
+        @media screen and (max-width: 785px) {
+            width:  75%;
+        }
+
+        
+        @media screen and (max-width: 500px) {
+            width:  90%;
+        }
+        
+        &__title {
+            display: flex;
+            flex-direction: column;
+            font-size: 45px;
+            margin-bottom: 120px;
+    
+            span {
+                line-height: 45px;
+            }
+
+        }
+        
+        .experience {
+            margin-bottom: 50px;
+
+            &__title {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                margin-bottom: 20px;
+                font-size: 20px;
+                font-weight: normal;
+                font-style: italic;
+                flex-wrap: wrap;
+                
+                @media screen and (max-width : 500px) {
+                    gap: 15px;
+                    margin-bottom: 35px;
+                }
+
+                strong {
+                    color: $green;
+                    font-style: normal;
+                    font-weight: bold;
+                }
+
+                .date {
+                    margin-left: 10px;
+                    align-self: center;
+                    line-height: 0;
+                    font-size: 16px;
+
+                    @media screen and (max-width : 500px) {
+                        margin-left: 0;
+                    }
+                }
+
+                .ongoing {
+                    font-size: 16px;
+                    margin-left: 10px;
+                    background-color: #DEFEEA;
+                    color: $green;
+                    padding: 3px 15px;
+                    border-radius: 20px;
+                    padding-left: 30px;
+                    position: relative;
+
+                    @media screen and (max-width : 500px) {
+                        margin-left: 0;
+                    }
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        left: 15px;
+                        top: 50%;
+                        background-color: $green;
+                        width: 10px;
+                        height: 10px;
+                        border-radius: 50%;
+                        transform: translate(-50%,-50%);
+                    }
+                }
+            }
+
+            &__content {
+                font-size: 16px;
+                line-height: 180.5%;
+            }
+        }
+    }
+}

@@ -1,0 +1,58 @@
+<nav class="nav">
+    <img src="/assets/logo.svg" class="nav__logo">
+    <ul class="nav__links">
+        <a href="#experience" class="link">professional experience</a>
+        <a href="#project" class="link">project</a>
+        <a href="#skills" class="link">skills</a>
+        <a href="#contact" class="link">contact</a>
+    </ul>
+    <div class="nav__links--mobile">
+        <div class="burger" (click)="toggleMenu()" [ngClass]="{'cross' : isOpen}">
+            <span></span>
+        </div>
+        <div class="links" [ngClass]="{'open' : isOpen}" (click)="toggleMenu()">
+            <a href="#experience" class="link--mobile">professional experience</a>
+            <a href="#project" class="link--mobile">project</a>
+            <a href="#skills" class="link--mobile">skills</a>
+            <a href="#contact" class="link--mobile">contact</a>
+        </div>
+    </div>
+    <img src="/assets/hero-right.svg"  class="top__img">
+</nav>
+
+<div class="hero">
+    <div class="hero__left">
+        <img src="/assets/hero-left.svg" class="left__img">
+        <div class="content__name">Thomas Hamon</div>
+        <h1 class="content__title">Bonjour, my name is Thomas im a software engineer and a student at IMT Atlantique</h1>
+        <div class="content__text">
+            <p>
+                <img src="/assets/hero-text.svg" class="hero__text__img">
+                I am a french software engineering student at the "IMT Atlantique". This training is a sandwich course, which means that I spend half the year at school and the other half in a company. I am currently doing my work-study at Equativ (one of the French Tech 120 companies). 
+            </p>
+            <strong>
+                As part of my studies, I am currently looking for a 13-week internship abroad in the field of software engineering.
+            </strong>
+        </div>
+        <div class="content__cta">Contact me <img src="/assets/arrow.svg" alt=""> </div>
+        <img src="/assets/hero-middle.svg" alt="" class="right__img">
+    </div>
+    <div class="hero__right">
+        <div class="carousel__top">
+            <div class="wrapper">
+                <span>Thomas Hamon</span>
+                <span>Thomas Hamon</span>
+                <span>Thomas Hamon</span>
+                <span>Thomas Hamon</span>
+            </div>
+        </div>
+        <div class="carousel__bottom">
+            <div class="wrapper">
+                <span>Thomas Hamon</span>
+                <span>Thomas Hamon</span>
+                <span>Thomas Hamon</span>
+                <span>Thomas Hamon</span>
+            </div>
+        </div>
+    </div>
+</div>

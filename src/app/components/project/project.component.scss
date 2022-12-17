@@ -1,0 +1,99 @@
+@import '../../../scss/variables';
+
+.project__section {
+
+    padding: 0 100px;
+    margin-top: 140px;
+
+    @media screen and (max-width: 785px) {
+        padding: 0;
+        width: 90%;
+        margin: 0 auto;
+        margin-top: 140px;
+    }
+    
+
+    &__title {
+        font-size: 45px;
+    }
+
+    .project {
+        
+        margin-top: 100px;
+
+        &__header {
+
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+
+            @media screen and (max-width: 785px) {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+
+            &__title {
+                color: $green;
+                font-size: 32px;
+                margin-right: 40px;
+            }
+
+            &__tags {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+                flex-wrap: wrap;
+
+                .tag {
+                    color: $green;
+                    border-radius: 30px;
+                    border: solid 1px $green;
+                    min-width: 80px;
+                    padding: 1px 10px;
+                    text-align: center;
+                    font-size: 12px;
+                }
+            }
+        }
+
+        &__img {
+            margin-top: 20px;
+            width: 100%;
+            height: 250px;
+            background-color: $green;
+            background-image: url(/assets/project.svg);
+            background-size: cover;
+            position: relative;
+
+            &::before {
+                content: 'TAP';
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background: linear-gradient(172.94deg, #1DB954 -23.64%, #6FD392 99.99%);
+                color: white;
+                z-index: 2;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                font-size: 30px;
+                font-weight: bold;
+                cursor: pointer;
+                transition: all 0.3s;
+                clip-path: circle(0% at 50% 50%);
+            }
+
+            &:hover::before {
+                clip-path: circle(100% at 50% 50%);
+            }
+        }
+
+        &__description {
+            margin-top: 20px;
+            line-height: 180.5%;
+        }
+    }
+}

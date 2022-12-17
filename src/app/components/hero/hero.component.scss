@@ -1,0 +1,415 @@
+@import '../../../scss/variables';
+
+
+// Navbar with links
+.nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 100px;
+    padding: 10px 100px;
+    color: $black;
+    position: relative;
+    
+    @media screen and (max-width : 900px) {
+        padding: 0 20px;
+        justify-content: space-between;
+    }
+
+    &__logo {
+        width: 50px;
+        height: 50px;
+    }
+
+    &__links {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 50px;
+        cursor: pointer;
+
+        @media screen and (max-width: 785px) {
+            display: none;
+        }
+
+        .link {
+            position: relative;
+            text-decoration: none;
+            color: unset    ;
+
+            &::after {
+                content: '';
+                position: absolute;
+                width: 100%;
+                transform: scaleX(0);
+                border-radius: 5px;
+                height: 2px;
+                bottom: 0;
+                left: 0;
+                background: $green;
+                transform-origin: bottom right;
+                transition: transform 0.25s ease-out;
+            }
+    
+            &:hover::after {
+                transform: scaleX(1);
+                transform-origin: bottom left;
+            }   
+        }
+
+    }
+
+    &__links--mobile {
+        display: none;
+        position: relative;
+
+        @media screen and (max-width: 785px) {
+            display: flex;
+        }
+
+        .links {
+            position: fixed;
+            z-index: 10;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            gap: 30px;
+
+            clip-path: circle(0% at 100% 0px);
+            transition: all 1.0s ease-in-out;
+            background-color: $green;
+
+            &.open {
+                clip-path: circle(1000% at 100% 0px);
+            }
+
+            .link--mobile {
+                color: white;
+                text-decoration: none;
+                font-weight: bold;
+            }
+        }
+    }
+
+    .top__img {
+        position: absolute;
+        right: -15%;
+        top: -300%;
+        @media screen and (max-width: 785px) {
+            display: none;
+        }
+    }
+}
+
+// Hero section
+.hero {
+    height: calc(100vh - 60px);
+    padding: 0 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+
+    @media screen and (max-width : 900px) {
+        flex-direction: column-reverse;
+        padding: 0;
+        width: 80%;
+        margin: 0 auto;
+        height: auto;
+
+    }
+
+    &__left {
+        max-width: 700px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        color: $black;
+        position: relative;
+
+        
+
+        .left__img {
+            z-index: -1;
+            left: -35%;
+            top: -30%;
+            position: absolute;
+        }
+
+        .right__img {
+            z-index: -1;
+            right: 0;
+            bottom: -30%;
+            width: 120px;
+            position: absolute;
+            
+            @media screen and (max-width: 785px) {
+                display: none;
+            }
+
+        }
+
+        .content__name {
+            color: $green;
+            font-weight: bold;
+            font-size: 24px;
+            padding-left: 100px;
+            position: relative;
+            margin-bottom: 10px;
+
+            @media screen and (max-width: 785px) {
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                width: 90px;
+                height: 3px;
+                background: $green;
+                left: 0px;
+                top: 50%;
+            }
+        }
+
+        .content__title {
+            font-weight: 700;
+            font-size: 32px;
+            line-height: 135%;
+            margin-bottom: 20px;
+            
+            @media screen and (max-width: 785px) {
+                font-size: 40px;
+            }
+        }
+
+        .content__text {
+            margin-bottom: 20px;
+            position: relative;
+            
+            @media screen and (max-width: 785px) {
+                line-height: 165%;
+            }
+
+            @media screen and (max-width: 500px) {
+                margin-top: 50px;
+            }
+
+            .hero__text__img {
+                position: absolute;
+                right: -50px;
+                top: -60px;
+
+                @media screen and (max-width: 500px) {
+                    height: 50px;
+                    top: -40px;
+                    right: -20px;
+                }
+            }
+        }
+
+        .content__cta {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            background: $black;
+            color: white;
+            width: fit-content;
+            font-weight: bold;
+            padding: 10px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+
+            &:hover {
+                opacity: 0.8;
+            }
+
+            img {
+                width: 20px;
+                
+            }
+        }
+    }
+
+    &__right {
+        width: 300px;
+        height: 90%;
+        border-radius: 30px;
+        background: linear-gradient(172.94deg, #1DB954 -23.64%, #6FD392 99.99%);
+        position: relative;
+        overflow: hidden;
+        display: flex;
+
+        @media screen and (max-width : 900px) {
+            width: 100%;
+            margin-top: 30px;
+            border-radius: 10px;
+            height: 200px;
+        }
+
+        .carousel__top {
+            width: 50%;
+            height: 100%;
+            position: relative;
+            animation: slide 20s linear infinite;
+
+            
+            @media screen and (max-width : 900px) {
+                animation: slideMobile 20s linear infinite;
+            }
+
+            .wrapper {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%) rotate(-90deg);
+                width: max-content;
+                font-size: 96px;
+                color: white;
+                font-weight: bold;
+
+                span {
+                    display: inline-block;
+                    margin-left: 25px;
+                }
+
+                @media screen and (max-width : 900px) {
+                    top: 30%;
+                    font-size: 45px;
+                    transform: translate(-50%,-50%) rotate(0deg);
+                }
+            }
+        }
+
+        .carousel__bottom {
+            width: 50%;
+            height: 100%;
+            position: relative;
+            animation: slideReverse 20s linear infinite;
+
+            @media screen and (max-width : 900px) {
+                top: 0%;
+                font-size: 45px;
+                animation: slideMobileReverse 20s linear infinite;
+            }
+
+            .wrapper {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: max-content;
+                transform: translate(-50%,-50%) rotate(-270deg);
+                font-size: 96px;
+                color: transparent;
+                font-weight: bold;
+                -webkit-text-stroke: 3px white;
+                text-stroke: 3px white;
+
+                @media screen and (max-width : 900px) {
+                    top: 70%;
+                    font-size: 45px;
+                    transform: translate(-50%,-50%) rotate(0deg);
+                    -webkit-text-stroke: 1px white;
+                    text-stroke: 1px white;
+                }
+
+                span {
+                    display: inline-block;
+                    margin-left: 25px;
+                }
+
+            }
+        }
+    }
+}
+
+
+  
+
+@keyframes slide  {
+    from{transform: translatey(50%);}
+    to{transform: translatey(-50%); }
+  }
+
+@keyframes slideReverse  {
+    from{transform: translatey(-50%);}
+    to{transform: translatey(50%); }
+}
+
+@keyframes slideMobile  {
+    from{transform: translatex(50%);}
+    to{transform: translatex(-50%); }
+}
+
+@keyframes slideMobileReverse  {
+    from{transform: translatex(-50%);}
+    to{transform: translatex(+50%); }
+}
+
+.burger {
+    z-index: 10;
+	width: 35px;
+	height: 32px;
+	margin: auto;
+	cursor: pointer;
+	position: relative;
+    z-index: 15;
+}
+.burger:before, .burger span, .burger:after {
+	width: 100%;
+	height: 4px;
+	display: block;
+	background: $green;
+	border-radius: 2px;
+	position: absolute;
+	opacity: 1;
+}
+.burger:before, .burger:after {
+    transition: top .35s cubic-bezier(.23,1,.32,1),transform .35s cubic-bezier(.23,1,.32,1),opacity .35s cubic-bezier(.23,1,.32,1),background-color 1.15s cubic-bezier(.86,0,.07,1);
+	-webkit-transition: top .35s cubic-bezier(.23,1,.32,1),-webkit-transform .35s cubic-bezier(.23,1,.32,1),opacity .35s cubic-bezier(.23,1,.32,1),background-color 1.15s cubic-bezier(.86,0,.07,1);
+	content: "";
+}
+.burger:before {
+	top: 4px;
+}
+.burger span {
+	top: 15px;
+}
+.burger:after {
+	top: 26px;
+}
+/* Hover */
+.burger:hover:before {
+	top: 7px;
+}
+.burger:hover:after {
+	top: 23px;
+}
+/* Click */
+.burger.cross span {
+	opacity: 0;
+}
+.burger.cross:before, .burger.cross:after {
+	top: 40%;
+    background-color: white;
+}
+.burger.cross:before {
+	-webkit-transform: rotate(45deg); 
+    -moz-transform: rotate(45deg);  
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=5); /*for IE*/
+}
+.burger.cross:after {
+	-webkit-transform: rotate(-45deg); 
+    -moz-transform: rotate(-45deg);  
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=-5); /*for IE*/
+}
+.burger:focus {
+	outline: none;
+}
