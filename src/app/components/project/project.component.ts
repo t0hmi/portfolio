@@ -16,4 +16,8 @@ export class ProjectComponent implements OnInit {
   goProject() {
     window.open('https://github.com/t0hmi/Chat-App', '_blank')
   }
+
+  goProjectConnectFour() {
+    window.open('https://github.com/t0hmi/connect-four', '_blank')
+  }
 }

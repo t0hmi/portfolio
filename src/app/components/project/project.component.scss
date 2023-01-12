@@ -66,6 +66,10 @@
             background-size: cover;
             position: relative;
 
+            &--connect-four {
+                background-image: url(/assets/project_connect.svg);
+            }
+
             &::before {
                 content: 'TAP';
                 display: flex;
