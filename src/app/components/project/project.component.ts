@@ -20,4 +20,8 @@ export class ProjectComponent implements OnInit {
   goProjectConnectFour() {
     window.open('https://github.com/t0hmi/connect-four', '_blank')
   }
+
+  goProjectRockPaper() {
+    window.open('https://t0hmi.github.io/rock-paper-scissors/', '_blank')
+  }
 }
