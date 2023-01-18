@@ -70,6 +70,10 @@
                 background-image: url(/assets/project_connect.svg);
             }
 
+            &--rocks {
+                background-image: url(/assets/project_paper.svg);
+            }
+
             &::before {
                 content: 'TAP';
                 display: flex;
